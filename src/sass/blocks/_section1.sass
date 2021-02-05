@@ -1,0 +1,114 @@
+@import '../_config'
+.woman
+    height: 40.5rem
+.main
+    position: relative
+    min-height: 40.5rem
+    left: 0
+    top: 0
+    right: 0
+    background: linear-gradient(76.56deg, #EC9E07 0%, #F7B10B 100%)
+    background-size: cover
+
+.left-desc
+    color: #000000
+    transform: rotate(-90deg)
+    width: 6.25rem
+    margin-left: 3.56rem
+    h1
+        font-family: Montserrat
+        font-style: normal
+        font-weight: 500
+        font-size: 0.75rem
+        line-height: $lineheight
+        letter-spacing: $spacing
+
+    span
+        position: relative
+        content: ''
+        display: block
+        background-color: rgba(0, 0, 0, 0.5)
+        height: 1px
+        width: 1.75rem
+        top: -18px
+        left: 112px
+
+.main-girl
+    padding-top: 2.8rem
+    float: right
+    @media ( max-width: 992px )
+        left: 0
+        transform: scale(0.7)
+    @media ( max-width: 480px )
+        display: none
+
+#carouselExampleIndicators
+    width: 25rem
+    height: 25rem
+    float: right
+    margin-right: 0
+    .carousel-inner
+        h5
+            font-family: $ft
+            font-style: normal
+            font-weight: 500
+            font-size: 3rem
+            line-height: 3.43rem
+            text-align: right
+            color: #FFFFFF
+        h6
+            font-family: $ft
+            font-style: normal
+            font-weight: 500
+            font-size: $fontsizeB
+            line-height: 1.31rem
+            color: #000000
+            text-align: right
+        .btn
+            font-family: $ft
+            font-style: normal
+            font-weight: 500
+            font-size: $fontsizeB
+            line-height: 21px
+            color: #FFFFFF
+            background: #000000
+            border-radius: 50px
+            width: 7.18rem
+            height: 2rem
+            float: right
+    .carousel-control-next
+        opacity: 1
+        &:hover
+            opacity: 0.5
+            transition: opacity .15s ease
+        .carousel-control-next-icon
+            background-color: #ffffff
+            width: 2.5rem
+            height: 2.5rem
+            border-radius: 20px
+            font-family: Futura
+            font-style: normal
+            font-weight: 500
+            font-size: 1.5rem
+            line-height: 2.625rem
+            text-align: center
+            color: #000000
+            opacity: 1
+
+    .carousel-control-prev
+        opacity: 1
+        &:hover
+            opacity: 0.5
+            transition: opacity .15s ease
+        .carousel-control-prev-icon
+            background-color: #ffffff
+            width: 2.5rem
+            height: 2.5rem
+            border-radius: 20px
+            font-family: $ft
+            font-style: normal
+            font-weight: 500
+            font-size: 1.5rem
+            line-height: 2.625rem
+            text-align: center
+            color: #000000

@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "id": 0,
+      "img": "https://a.lmcdn.ru/img600x866/S/E/SE049EWKQPH5_12354161_1_v3_2x.jpg",
+      "name": "Seventy",
+      "type": "Брюки",
+      "price": 4628,
+      "sale": 7120
+    },
+    {
+      "id": 1,
+      "img": "https://a.lmcdn.ru/img600x866/L/A/LA079EWJRHT9_12331643_1_v3_2x.jpg",
+      "name": "Lauren Ralph Lauren",
+      "type": "Джемпер",
+      "price": 2040,
+      "sale": 5830
+    },
+    {
+      "id": 2,
+      "img": "https://a.lmcdn.ru/img600x866/T/H/TH008EWKWOE1_12228249_1_v1_2x.jpg",
+      "name": "Theory",
+      "type": "Джемпер",
+      "price": 10664,
+      "sale": 19390
+    },
+    {
+      "id": 3,
+      "img": "https://a.lmcdn.ru/img600x866/H/E/HE025EWLYKT1_12960589_1_v1_2x.jpg",
+      "name": "Helmut Lang",
+      "type": "Пулловер",
+      "price": 14080,
+      "sale": 0
+    },
+    {
+      "id": 4,
+      "img": "https://a.lmcdn.ru/img600x866/E/L/EL066EWLSQA2_12865056_2_v1_2x.jpg",
+      "name": "Eleventy",
+      "type": "Джемпер",
+      "price": 9724,
+      "sale": 17680
+    },
+    {
+      "id": 5,
+      "img": "https://a.lmcdn.ru/img600x866/E/L/EL066EWJTMM2_12865041_2_v1_2x.jpg",
+      "name": "Eleventy",
+      "type": "Свитер",
+      "price": 8628,
+      "sale": 14380
+    },
+    {
+      "id": 6,
+      "img": "https://a.lmcdn.ru/img600x866/E/A/EA002EWMFVA1_13077219_2_v1_2x.jpg",
+      "name": "EA7",
+      "type": "Куртка утепленная",
+      "price": 6090,
+      "sale": 0
+    },
+    {
+      "id": 7,
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XW036C2_12247287_2_v2_2x.jpeg",
+      "name": "Polo Ralph Lauren",
+      "type": "Футболка",
+      "price": 920,
+      "sale": 2300
+    },
+    {
+      "id": 8,
+      "img": "https://a.lmcdn.ru/img600x866/P/I/PI029EWJWBD9_11510897_2_v1_2x.jpg",
+      "name": "Pilyq",
+      "type": "Лиф LACE BRALETTE",
+      "price": 2058,
+      "sale": 3430
+    }
+  ]
+}

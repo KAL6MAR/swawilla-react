@@ -1,0 +1,164 @@
+.z1000
+    z-index: 10000000
+
+.top-lite
+    margin-bottom: -58px
+.row
+    padding-top: 20px
+.menu
+    font-family: Montserrat
+    font-style: normal
+    font-weight: 700
+    font-size: 0.75rem
+    line-height: 15px
+    letter-spacing: 0.33em
+    color: #000
+    padding-left: 40px
+    display: inline-block
+    &:hover
+        text-decoration: none
+        color: rgba(0, 0, 0, .7)
+        transition: color .2 ease
+    .active
+        color: rgba(0, 0, 0, .7)
+.line
+    position: relative
+    content: ''
+    display: block
+    background-color: rgba(255, 255, 255, 0.47)
+    height: 1px
+    width: 20px
+    transform: rotate(-90deg)
+    left: 4.5rem
+    bottom: 1rem
+    @media ( max-width: 480px )
+        display: none
+.search
+    position: relative
+    left: 1.7rem
+    bottom: 0.3rem
+    display: inline
+.logo
+    text-align: center
+    top: 0
+    padding: 0
+    font-family: Futura
+    font-style: normal
+    font-weight: 500
+    font-size: 32px
+    line-height: 36px
+    color: #000
+    @media ( max-width: 480px )
+        font-size: 24px
+
+.cart-account
+    padding-right: 40px
+    @media ( max-width: 768px )
+        display: none
+
+#account-btn
+    &:hover
+        cursor: pointer
+    img
+        margin-right: 5px
+        width: 0.5rem
+        height: 0.5rem
+        &.rotated
+            transform: rotate(180deg)
+.cart-account
+    font-family: Futura
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 16px
+    color: #000000
+    float: right
+    .active
+        border-bottom-style: dotted
+        width: 60px
+        border-color: rgba(0, 0, 0, .4)
+    p
+        display: inline
+        position: relative
+        top: 0.5rem
+        right: 0.5rem
+    .cart
+        background-color: #000
+        width: 31px
+        height: 31px
+        border-radius: 50px
+        display: inline-block
+        .shopping-bag
+            width: 17px
+            height: 17px
+            position: relative
+            top: 50%
+            transform: translate(0, -50%)
+            left: 7px
+        &:hover
+            cursor: pointer
+    .account-poppup
+        position: absolute
+        display: block
+        width: 133px
+        height: 131px
+        background: #FFFFFF
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 10px
+        margin-top: 10px
+        right: 80px
+        z-index: 100
+        .block
+            h1
+                font-family: Montserrat
+                font-style: normal
+                font-weight: bold
+                font-size: 14px
+                line-height: 17px
+                color: #000000
+        .icon
+            background-color: #cccccc
+            width: 39px
+            height: 39px
+            border-radius: 20px
+            margin-left: 11px
+            // position: relative
+            top: 10px
+            h1
+                position: relative
+                top: -20px
+                margin: 0 0 0 50px
+                font-family: Montserrat
+                font-style: normal
+                font-weight: bold
+                font-size: 14px
+                line-height: 17px
+                color: #000000
+            img
+                z-index: 5
+                width: 30px
+                height: 30px
+                margin: 4px 0 0 4px
+
+        .account-poppup-menu
+            text-align: center
+            position: relative
+            top: 13px
+            .block
+                transition: background .15s ease
+                background: #fff
+                width: 133px
+                height: 23px
+                border: 1px solid #E4E4E4
+                box-sizing: border-box
+                h1
+                    display: block
+                    position: relative
+                    padding: 3px
+                a:hover
+                    text-decoration: none
+                &:hover
+                    transition: background .15s ease
+                    background: rgba(0, 0, 0, 0.13)
+    @media ( max-width: 480px )
+        display: none

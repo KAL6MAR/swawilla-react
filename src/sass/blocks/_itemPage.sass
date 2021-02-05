@@ -1,0 +1,262 @@
+@import '../_config'
+
+@media (min-width: 768px)
+    .multi-item-carousel .carousel-inner .carousel-item
+        margin-right: 0
+        padding: 0
+.multi-item-carousel .carousel-inner .carousel-item.active + .carousel-item,
+.multi-item-carousel .carousel-inner .carousel-item.active + .carousel-item
+    display: block
+.multi-item-carousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+.multi-item-carousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+.multi-item-carousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item
+    transition: none
+.multi-item-carousel
+    .carousel-inner
+        .carousel-item
+            &.active
+                & + .carousel-item
+                    & + .carousel-item
+                        position: absolute
+                        top: 0
+                        right: -50%
+                        z-index: -1
+                        display: block
+                        visibility: visible
+        .carousel-item-prev
+            &.carousel-item-right
+                position: absolute
+                top: 0
+                left: 0
+                z-index: -1
+                display: block
+                visibility: visible
+.multi-item-carousel .carousel-inner .carousel-item-next,
+.multi-item-carousel .carousel-inner .carousel-item-prev
+    position: relative
+    transform: translate3d(0, 0, 0)
+.multi-item-carousel .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+.multi-item-carousel .carousel-item-next.carousel-item-left + .carousel-item,
+.multi-item-carousel .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+.multi-item-carousel .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item
+    position: relative
+    transform: translate3d(-100%, 0, 0)
+    visibility: visible
+.multi-item-carousel .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+.multi-item-carousel .carousel-item-prev.carousel-item-right + .carousel-item,
+.multi-item-carousel .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+.multi-item-carousel .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item
+    position: relative
+    transform: translate3d(100%, 0, 0)
+    display: block
+    visibility: visible
+
+.item-sec
+    background-color: #FAFAFA
+    padding-top: 2rem
+
+.carousel
+    .controls-wrapper
+        float: left
+        position: absolute
+        top: 50%
+        right: 60px
+        width: 50px
+        height: 100px
+        transform: translate(0, -50%)
+        .control-next
+            position: relative
+            top: 0
+            right: 0
+            .carousel-control-next
+                height: 50px
+                width: 50px
+                &:hover
+                    opacity: 0.5
+                    transition: opacity .15s ease
+                .carousel-control-next-icon
+                    background-color: #ffffff
+                    width: 40px
+                    height: 40px
+                    border-radius: 20px
+                    font-family: Futura
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 24px
+                    line-height: 42px
+                    text-align: center
+                    color: #000000
+                    opacity: 1
+                    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25)
+        .control-prev
+            position: relative
+            top: 50px
+            left: 0
+            .carousel-control-prev
+                height: 50px
+                width: 50px
+                &:hover
+                    opacity: 0.5
+                    transition: opacity .15s ease
+                .carousel-control-prev-icon
+                    margin-right: 0
+                    background-color: #ffffff
+                    width: 40px
+                    height: 40px
+                    border-radius: 20px
+                    font-family: Futura
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 24px
+                    line-height: 42px
+                    text-align: center
+                    color: #000000
+                    opacity: 1
+                    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25)
+
+.navbar-brand
+    position: absolute
+    width: 100%
+    left: 0
+    top: 0
+    text-align: center
+    margin: auto
+    font-family: Futura
+    font-style: normal
+    font-weight: 500
+    font-size: 32px
+    line-height: 36px
+    color: #000
+
+.item-desc
+    h1
+        font-family: Montserrat
+        font-style: normal
+        font-weight: bold
+        font-size: 18px
+        line-height: 22px
+        color: #000000
+    p
+        text-align: left
+        font-family: Futura
+        font-style: normal
+        font-weight: 500
+        font-size: 24px
+        line-height: 28px
+        color: #F7B10B
+        span
+            font-family: Futura
+            font-style: normal
+            font-weight: 500
+            font-size: 24px
+            line-height: 28px
+            text-decoration-line: line-through
+            color: #000000!important
+    .description
+        width: 400px
+        font-family: Futura
+        font-style: italic
+        font-weight: 300
+        font-size: 18px
+        line-height: 20px
+        color: #000000
+    .size
+        h2
+            margin: 0
+            padding: 0
+            padding-left: 7px
+            display: inline
+            font-family: Futura
+            font-style: normal
+            font-weight: 500
+            font-size: 18px
+            line-height: 21px
+            color: #000000
+            margin-right: 30px
+        p
+            font-family: Futura
+            font-style: normal
+            font-weight: 300
+            font-size: 14px
+            line-height: 15px
+            color: #000000
+            text-align: right
+            margin-right: 15px
+            a
+                text-decoration: none
+                color: #000000
+        .items-size
+            margin: 0
+            list-style: none
+            padding-left: 0
+            display: inline-block
+            li
+                text-align: center
+                width: 40px
+                display: inline-block
+                font-family: Montserrat
+                font-style: normal
+                font-weight: 600
+                margin-right: -5px
+                font-size: 16px
+                line-height: 22px
+                color: rgba(0, 0, 0, 0.5)
+                background: #c4c4c4
+                list-style: none
+                transition: transform .2s ease
+                transform: scale(1)
+                z-index: 0
+                &:hover
+                    transition: transform .2s ease
+                    transform: scale(1.2)
+
+.buttons-place
+    min-width: 180px
+    min-height: 50px
+    .item-ammount
+        display: inline
+        padding: 5px 5px
+        background: #FAFAFA
+        border: 1px solid #C4C4C4
+        box-sizing: border-box
+        border-radius: 50px
+        p
+            display: inline
+            margin: 0
+            font-family: Futura
+            font-style: normal
+            font-weight: 500
+            font-size: 18px
+            line-height: 21px
+            color: #000000
+
+        span
+            display: inline
+            margin: 0 15px 0 10px
+            font-family: Futura
+            font-style: normal
+            font-weight: 500
+            font-size: 18px
+            line-height: 21px
+            color: #c4c4c4
+    .btn-black
+        padding: 5px 26px 5px 26px
+        margin-left: 23px
+        font-family: Futura
+        font-style: normal
+        font-weight: 500
+        font-size: 16px
+        line-height: 18px
+        color: #FFFFFF
+        transition: background-color .15s ease
+        &:hover
+            background-color: $accent
+            transition: background-color .15s ease
+            text-decoration: none
+    svg
+        margin-left: 16px
+        path
+            fill: black
+
+        &:hover path
+            fill: red

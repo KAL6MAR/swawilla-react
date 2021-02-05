@@ -1,0 +1,187 @@
+@mixin border-radius($radius)
+    -webkit-border-radius: $radius
+    -moz-border-radius: $radius
+    -ms-border-radius: $radius
+    border-radius: $radius
+
+@mixin transition($transition)
+    -moz-transition: all $transition ease
+    -o-transition: all $transition ease
+    -webkit-transition: all $transition ease
+    -ms-transition: all $transition ease
+    transition: all $transition ease
+
+// USER VARIABLES SECTION
+
+$accent: #F7B10B // Accent Color
+$gray: #fcfcfc
+$white: #fff
+$black: #000000
+$darken: #3a4348
+
+$primary: #f1b8c4
+$spacing: 0.33em
+$fontsize: 1rem
+$fontsizeB: 1.125rem // Body Font Size
+$textcolor: #333 // Text Color
+$lineheight: 1.65 // Document Line Height
+$userfont: Montserrat, sans-serif // User Font Family
+$ft: Futura, sans-serif
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 2.5rem
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+@import '~bootstrap/scss/bootstrap.scss'
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+    @font-face
+        font-family: $fname
+        font-style: $fstyle
+        font-weight: $fweight
+        src: url($furl) format('woff2')
+
+@include font('roboto-oh5', normal, 400, '/fonts/roboto-regular-webfont.woff2')
+@include font('roboto-oh5', italic, 400, '/fonts/roboto-italic-webfont.woff2')
+@include font('roboto-oh5', normal, 700, '/fonts/roboto-bold-webfont.woff2')
+@include font('roboto-oh5', italic, 700, '/fonts/roboto-bolditalic-webfont.woff2')
+@include font('Montserrat', normal, 300, '/fonts/montserrat-300.woff2')
+@include font('Montserrat', italic, 300, '/fonts/montserrat-300italic.woff2')
+@include font('Montserrat', normal, 400, '/fonts/montserrat-regular.woff2')
+@include font('Montserrat', italic, 400, '/fonts/montserrat-regularitalic.woff2')
+@include font('Montserrat', normal, 700, '/fonts/montserrat-700.woff2')
+@include font('Futura', normal, 300, '/fonts/FuturaLightC.woff')
+@include font('Futura', italic, 300, '/fonts/FuturaLightC-Italic.woff')
+@include font('Futura', normal, 400, '/fonts/FuturaBookC.woff')
+@include font('Futura', italic, 400, '/fonts/FuturaBookC-Italic.woff')
+@include font('Futura', normal, 500, '/fonts/FuturaMediumC.woff')
+@include font('Futura', italic, 500, '/fonts/FuturaMediumC-Italic.woff')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+    color: #666
+
+::selection
+    background-color: $accent
+    color: #fff
+
+input, textarea
+    outline: none
+    &:focus:required:invalid
+        border-color: red
+    &:required:valid
+        border-color: green
+
+body
+    font-family: $userfont
+    font-size: $fontsize
+    line-height: $lineheight
+    color: $textcolor
+    min-width: 320px
+    position: relative
+    overflow-x: hidden
+
+.btn-black
+    border-radius: 20px
+    background-color: $black
+    width: 50px
+    height: 50px
+
+.gray-tag
+    font-family: $ft
+    font-style: normal
+    font-weight: 500
+    font-size: 18px
+    line-height: 21px
+    color: rgba(0, 0, 0, 0.4)
+
+.main-tag
+    font-family: $userfont
+    font-style: normal
+    font-weight: 600
+    font-size: 18px
+    line-height: 22px
+    color: #000000
+
+.price
+    text-align: left
+    font-family: $ft
+    font-style: normal
+    font-weight: 500
+    font-size: 24px
+    line-height: 28px
+    color: #F7B10B
+    span
+        font-family: $ft
+        font-style: normal
+        font-weight: 500
+        font-size: 24px
+        line-height: 28px
+        text-decoration-line: line-through
+        color: #000000!important
+.line-b
+    border-bottom: 1px solid black
+.line-tb
+    border-top: 1px solid black
+    border-bottom: 1px solid black
+.cart-price
+    font-family: $ft
+    font-style: normal
+    font-weight: 500
+    font-size: 18px
+    line-height: 21px
+    color: rgba(0, 0, 0, 0.4)
+    span
+        font-family: $ft
+        font-style: normal
+        font-weight: 500
+        font-size: 18px
+        line-height: 21px
+        color: #000000
+        margin-left: 23px
+
+.bnt-big
+    background: $accent
+    width: 210px
+    height: 97px
+    color: $white
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    padding: 7px 26px
+    transition: background .15s ease
+    &:hover
+        color: $white
+        text-decoration: none
+        transition: background .15s ease
+        background: darken($accent, 4)
+.btn-white
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    padding: 4px 26px
+    position: absolute
+    width: 217px
+    height: 32px
+    background: #FFFFFF
+    border-radius: 50px
+    font-family: Futura
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 16px
+    color: #000000
+    flex: none
+    border: 0
+    flex-grow: 0
+    margin: 40px 0px
+    &:hover
+        text-decoration: none
+        color: #000

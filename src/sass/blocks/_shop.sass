@@ -1,0 +1,473 @@
+@import '../_config'
+.hero-wrap
+    width: 100%
+    position: relative
+    .overlay
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        content: ''
+        opacity: .6
+        width: 50%
+        background: $primary
+
+    .slider-text
+        color: $white
+        position: relative
+        h3.v
+            writing-mode: vertical-lr
+            transform: rotate(180deg)
+            text-orientation: sideways
+            text-align: center
+            text-orientation: sideways
+            margin: 0rem
+            position: fixed
+            top: 0
+            left: 20px
+            height: 100%
+            font-family: $ft
+            text-transform: uppercase
+            font-weight: 300
+            letter-spacing: 2px
+            font-size: 18px
+            z-index: 1
+        h3.vr
+            writing-mode: vertical-lr
+            transform: rotate(0deg)
+            text-orientation: sideways
+            text-align: center
+            text-orientation: sideways
+            margin: 0rem
+            position: fixed
+            top: 0
+            right: 20px
+            height: 100%
+            font-family: $ft
+            text-transform: uppercase
+            font-weight: 300
+            letter-spacing: 2px
+            font-size: 18px
+            z-index: 1
+        .v,.vr
+            @include media-breakpoint-down(md)
+                display: none
+        h1
+            font-family: $ft
+            color: $white
+            font-weight: 700
+            font-size: 120px
+            text-transform: uppercase
+            &
+                font-size: 50px
+
+        h2
+            font-size: 20px
+            text-transform: uppercase
+            letter-spacing: 4px
+            font-family: $ft
+            color: $white
+        span
+            position: relative
+        &:before, &:after
+            position: absolute
+            top: 50%
+            content: ''
+            width: 30px
+            height: 1px
+            background: $white
+
+            &:before
+                left: -45px
+
+                &:after
+                    right: -45px
+
+        .breadcrumbs
+            text-transform: uppercase
+            font-size: 13px
+            letter-spacing: 1px
+            margin-bottom: 0
+            z-index: 99
+            span
+                color: rgba(0,0,0,.7)
+                a
+                    color: $black
+
+        .bread
+            font-weight: 100
+            color: $black
+            font-size: 40px
+            font-family: $userfont
+            letter-spacing: 3px
+        .btn-primary
+            border: 1px solid rgba(255,255,255,.4)
+            @include border-radius(30px)
+            &:hover, &:focus
+                background: $white !important
+                color: $black
+    &.hero-bread
+        padding: 7em 0
+
+.block-27
+    ul
+        padding: 0
+        margin: 0
+        li
+            display: inline-block
+            margin-bottom: 4px
+            font-weight: 400
+            a,span
+                color: $accent
+                text-align: center
+                display: inline-block
+                width: 40px
+                height: 40px
+                line-height: 40px
+                border-radius: 50%
+                border: 1px solid lighten($accent,0%)
+            &.active
+                a, span
+                    background: $accent
+                    color: $white
+                    border: 1px solid transparent
+
+.ftco-product
+    .owl-carousel .owl-stage-outer
+        padding-bottom: 2em
+        position: relative
+
+.product
+    display: block
+    width: 100%
+    margin-bottom: 30px
+    @include media-breakpoint-down(md)
+        margin-bottom: 30px
+    .img-prod
+        position: relative
+        display: block
+        overflow: hidden
+        span.status
+            position: absolute
+            top: 10px
+            left: -1px
+            padding: 2px 15px
+            color: $black
+            font-weight: 300
+            background: $accent
+        img
+            -webkit-transform: scale(1.0)
+            -moz-transform: scale(1.0)
+            -ms-transform: scale(1.0)
+            -o-transform: scale(1.0)
+            transform: scale(1.0)
+            @include transition(.3s)
+
+        &:hover, &:focus
+            img
+                -webkit-transform: scale(1.1)
+                -moz-transform: scale(1.1)
+                -ms-transform: scale(1.1)
+                -o-transform: scale(1.1)
+                transform: scale(1.1)
+
+    .img
+        display: block
+        height: 500px
+
+    .icon
+        width: 60px
+        height: 60px
+        background: $white
+        opacity: 0
+        @include border-radius(50%)
+        @include transition(.3s)
+        span
+            color: $black
+
+    &:hover
+        .icon
+            opacity: 1
+
+    .text
+        background: $white
+        position: relative
+        h1
+            font-size: $fontsizeB
+            margin-bottom: 5px
+            font-weight: 300
+        h3
+            font-family: $ft
+            font-size: $fontsize
+            margin-bottom: 5px
+            font-weight: 300
+        a
+            color: $black
+
+            span.price-dc
+                text-decoration: line-through
+                color: lighten($black,70%)
+            span.price-sale
+                color: $black
+
+        .pricing, .rating
+            width: 50%
+
+        .bottom-area
+            margin-bottom: 10px
+            a
+                color: $black
+
+            a.add-to-cart
+                font-size: 13px
+                color: $black
+                text-transform: uppercase
+                font-weight: 300
+                i
+                    font-size: 16px
+.ftco-section-parallax
+    position: relative
+    .parallax-img
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center center
+        position: relative
+        padding: 7em 0
+        background: $white
+    .heading-section-white
+        h2
+            font-weight: 400 !important
+.big
+    font-family: Montserrat
+    position: absolute
+    top: -110px
+    left: 0
+    right: 0
+    font-size: 150px
+    color: rgba(0,0,0,.04)
+    font-weight: 900
+    letter-spacing: 1px
+    @include media-breakpoint-down(md)
+        display: none
+.form-group
+    position: relative
+    input
+        padding-right: 50px
+.submit
+    border-left: 1px solid rgba(0,0,0,1)
+    color: $white !important
+
+    font-size: 16px
+    background: $black !important
+    &:hover
+        cursor: pointer
+
+.heading-section
+    position: relative
+    .subheading
+        font-size: 14px
+        display: block
+        margin-bottom: 10px
+    h2
+        font-size: 30px
+        font-weight: 400
+        position: relative
+        text-transform: uppercase
+        font-family: Futura
+        letter-spacing: 6px
+        strong
+            font-weight: 700
+
+        @include media-breakpoint-down(sm)
+            font-size: 28px
+
+    &.heading-section-white
+        .subheading
+            color: rgba(255,255,255,.9)
+
+        h2
+            font-size: 30px
+            color: $white
+            &:after, &:before
+                display: none
+
+        p
+            color: rgba(255,255,255,.9)
+
+    .big
+        font-family: Montserrat
+        position: absolute
+        top: -110px
+        right: 5
+        font-size: 150px
+        color: rgba(0,0,0,.04)
+        font-weight: 700
+        letter-spacing: 1px
+        @include media-breakpoint-down(md)
+            display: none
+
+.form-group
+    position: relative
+    .form-control
+        padding-right: 40px
+        color: $accent
+        background: transparent !important
+        &::-webkit-input-placeholder
+            color: lighten($black,30%)
+
+            &::-moz-placeholder
+                color: lighten($black,30%)
+
+            &:-ms-input-placeholder
+                color: lighten($black,30%)
+
+            &:-moz-placeholder
+                color: lighten($black,30%)
+
+        .icon
+            position: absolute
+            top: 50%
+            right: 20px
+            font-size: 14px
+            transform: translateY(-50%)
+            color: $accent
+            span
+                color: $accent
+
+            @include media-breakpoint-down(sm)
+                right: 10px
+
+        .select-wrap
+            position: relative
+            select
+                font-size: 13px
+                appearance: none
+                text-transform: uppercase
+                letter-spacing: 2px
+
+.block-17
+    background: $accent
+    overflow: hidden
+    form
+        .fields
+            width: calc(100% - 80px)
+            position: relative
+            .form-control
+                box-shadow: none!important
+                border: transparent
+                background: $white !important
+                color: lighten($black,30%) !important
+                border: 2px solid rgba(0,0,0,.1)
+                font-size: 14px
+                width: 100%
+                height: 70px !important
+                bordeR: 1px solid transparent
+                padding: 10px 30px
+                &::-webkit-input-placeholder
+                    color: lighten($black,30%)
+
+                &::-moz-placeholder
+                    color: lighten($black,30%)
+
+                &:-ms-input-placeholder
+                    color: lighten($black,30%)
+
+                &:-moz-placeholder
+                    color: lighten($black,30%)
+
+            .icon
+                position: absolute
+                top: 50%
+                right: 30px
+                font-size: 14px
+                transform: translateY(-50%)
+                color: rgba($black,.7)
+                @include media-breakpoint-down(sm)
+                    right: 10px
+
+            .textfield-search, .select-wrap
+
+            .textfield-search
+                input
+
+            .select-wrap
+                position: relative
+                select
+                    appearance: none
+
+        .search-submit
+            width: 160px
+            background: $accent
+            border: 1px solid $accent
+            color: $white
+            padding: 12px 10px
+            @include media-breakpoint-down(sm)
+                width: 80px
+            &:hover
+                background: $accent !important
+                color: $white !important
+                border: 1px solid $accent !important
+.block-23
+    ul
+        padding: 0
+        li
+
+            &, > a
+                display: table
+                line-height: 1.5
+                margin-bottom: 15px
+
+            span
+                color: $accent
+
+            .icon, .text
+                display: table-cell
+                vertical-align: top
+
+            .icon
+                width: 40px
+                font-size: 18px
+                padding-top: 2px
+.ftco-footer
+    font-size: 16px
+    padding: 7em 0
+    color: $black
+    &-logo
+        text-transform: uppercase
+        letter-spacing: .1em
+        &-widget
+        h2
+            font-weight: normal
+            margin-bottom: 20px
+            font-size: 13px
+            font-weight: 400
+            text-transform: uppercase
+            letter-spacing: 3px
+        ul
+            li
+                font-size: 14px
+                margin-bottom: 24px
+                a
+                    color: $black
+        .btn-primary
+            border: 2px solid $white !important
+            &:hover
+                border: 2px solid $white !important
+.ftco-heading-2
+    font-weight: normal
+    margin-bottom: 20px
+    font-size: 13px
+    font-weight: 400
+    text-transform: uppercase
+    letter-spacing: 3px
+
+.list-unstyled
+    .py-2
+        font-family: Montserrat
+        color: #000
+        line-height: 1.65em
+        font-size: 11px
+        font-weight: 300
+        text-transform: uppercase
+        letter-spacing: 3px

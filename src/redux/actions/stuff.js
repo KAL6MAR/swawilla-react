@@ -1,4 +1,4 @@
-const setStuff = (stuff) => ({
+export const setStuff = (items) => ({
     type: 'SET_STUFF',
-    payload: stuff,
+    payload: items,
 });

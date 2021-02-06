@@ -1,5 +1,4 @@
 import React from 'react';
-
 function Footer(props) {
     return (
         <footer className="ftco-footer bg-light ftco-section">
@@ -65,7 +64,7 @@ function Footer(props) {
                 </div>
             </div>
         </footer>
+
     );
 }
-
 export default Footer;

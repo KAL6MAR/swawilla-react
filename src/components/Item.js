@@ -1,5 +1,4 @@
 import React from 'react';
-
 function Item({ name, img, type, sale, price }) {
     return (
         <div className="col-sm col-md-6 col-lg-3 ftco-animate">

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import fileteReduser from './filters';
+import filterReduser from './filters';
 import stuffReduser from './stuff';
 
 const rootReduser = combineReducers({
-    filete: fileteReduser,
+    filter: filterReduser,
     stuff: stuffReduser,
 });
 

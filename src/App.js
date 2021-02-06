@@ -1,28 +1,25 @@
-
-import './App.sass';
-
-// import Mmenu from './components/Mmenu';
-import Nav from './components/Nav';
-import Section1 from './components/Section1';
-import Section2 from './components/Section2';
-import Section3 from './components/Section3'
-import Section4 from './components/Section4';
-import Footer from './components/Footer';
-import ItemsPage from './components/ItemsPage';
-import { Route } from 'react-router-dom';
-import Shop from './components/Shop';
 import { useEffect, useState } from 'react';
 
-function App() {
+import { Section1, Section2, Section3, Section4, Shop, ItemsPage, Footer, Nav } from './components'
+import { Route } from 'react-router-dom';
+import axios from 'axios'
+import { setStuff as setStuffAction } from './redux/actions/stuff'
+
+import { connect } from 'react-redux'
+
+
+import './App.sass';
+import store from './redux/store';
+
+
+function App(props) {
+  console.log(props.items)
   const [item, setItem] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/bd.json')
-      .then((resp) => resp.json())
-      .then((json) => {
-        setItem(json.items);
-
-      })
+    axios.get('http://localhost:3000/bd.json').then(({ data }) => {
+      store.dispatch(setStuffAction(data.items))
+    })
   }, [])
 
   return (
@@ -38,12 +35,27 @@ function App() {
       <Route path="/item/:id">
         <ItemsPage />
       </Route>
+
       <Route exact path="/shop">
-        <Shop items={item} />
+        <Shop items={props.items} />
       </Route>
+
       <Footer />
     </div >
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    items: state.stuff.items
+  }
+};
+
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setStuff: (stuff) => dispatch(setStuffAction(stuff))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

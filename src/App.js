@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { Section1, Section2, Section3, Section4, Shop, ItemsPage, Footer, Nav } from './components'
 import { Route } from 'react-router-dom';
@@ -9,16 +9,15 @@ import { connect } from 'react-redux'
 
 
 import './App.sass';
-import store from './redux/store';
 
 
 function App(props) {
   console.log(props.items)
-  const [item, setItem] = useState([]);
+
 
   useEffect(() => {
     axios.get('http://localhost:3000/bd.json').then(({ data }) => {
-      store.dispatch(setStuffAction(data.items))
+      props.setStuff(data.items)
     })
   }, [])
 
@@ -52,7 +51,7 @@ const mapStateToProps = (state) => {
 };
 
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     setStuff: (stuff) => dispatch(setStuffAction(stuff))
   }

@@ -1,4 +1,5 @@
 import Categories from './Categories';
+import SctollToTop from './ScrollToTop';
 import Collection from './Collection';
 import Item from './Item';
 import ItemsPage from './ItemsPage';
@@ -13,5 +14,5 @@ import Shop from './Shop';
 
 export {
     Categories, Collection, Item, ItemsPage, Nav, Footer, PageLinks,
-    Section1, Section2, Section3, Section4, Shop,
+    Section1, Section2, Section3, Section4, Shop, SctollToTop,
 }

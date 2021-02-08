@@ -5,20 +5,21 @@ import { Route } from 'react-router-dom';
 import axios from 'axios'
 import { setStuff as setStuffAction } from './redux/actions/stuff'
 
-import { connect } from 'react-redux'
+
+import { useDispatch } from 'react-redux'
 
 
 import './App.sass';
 
+function App() {
 
-function App(props) {
-  console.log(props.items)
-
+  const dispatch = useDispatch();
 
   useEffect(() => {
     axios.get('http://localhost:3000/bd.json').then(({ data }) => {
-      props.setStuff(data.items)
+      dispatch(setStuffAction(data.items));
     })
+    // eslint-disable-next-line
   }, [])
 
   return (
@@ -31,12 +32,9 @@ function App(props) {
         <Section4 />
       </Route>
 
-      <Route path="/item/:id">
-        <ItemsPage />
-      </Route>
-
+      <Route path="/shop/item/:id" component={ItemsPage} />
       <Route exact path="/shop">
-        <Shop items={props.items} />
+        <Shop />
       </Route>
 
       <Footer />
@@ -44,17 +42,21 @@ function App(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    items: state.stuff.items
-  }
-};
+
+export default App;
+
+// const mapStateToProps = (state) => {
+//   return {
+//     items: state.stuff.items,
+//     filters: state.filters
+//   }
+// };
 
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setStuff: (stuff) => dispatch(setStuffAction(stuff))
-  }
-}
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     setStuff: (stuff) => dispatch(setStuffAction(stuff))
+//   }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default connect(mapStateToProps, mapDispatchToProps)(App);

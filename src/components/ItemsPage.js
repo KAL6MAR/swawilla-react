@@ -1,22 +1,31 @@
 import React from 'react';
-import { ItemGirl1, ItemGirl2 } from '../img'
-function ItemsPage(props) {
+import store from '../redux/store'
+
+function ItemsPage({ match }) {
+
+    const { id } = match.params
+
+    const selectItems = state => state.stuff.items[id]
+    const getItem = selectItems(store.getState())
+
+    const { name, type, price, sale, img } = getItem;
+
     return (
         <div className="section item-sec">
             <div className="row conteiner-fluid">
                 <div className="carousel slide multi-item-carousel col-sm-6 col-md-6" id="theCarousel">
                     <div className="carousel-inner row w-100">
                         <div className="carousel-item active col-md-6">
-                            <img src={ItemGirl1} alt="" className="img-fluid mx-auto d-block" />
+                            <img src={img} alt="" className="img-fluid mx-auto d-block" />
                         </div>
                         <div className="carousel-item col-md-6">
-                            <img src={ItemGirl2} alt="" className="img-fluid mx-auto d-block" />
+                            <img src={img} alt="" className="img-fluid mx-auto d-block" />
                         </div>
                         <div className="carousel-item col-md-6">
-                            <img src={ItemGirl1} alt="" className="img-fluid mx-auto d-block" />
+                            <img src={img} alt="" className="img-fluid mx-auto d-block" />
                         </div>
                         <div className="carousel-item col-md-6">
-                            <img src={ItemGirl2} alt="" className="img-fluid mx-auto d-block" />
+                            <img src={img} alt="" className="img-fluid mx-auto d-block" />
                         </div>
                     </div>
                     <div className="controls-wrapper">
@@ -37,11 +46,9 @@ function ItemsPage(props) {
 
                 <div className="item-desc col-md-3 col-sm-3 align-self-center">
 
-                    <h1>Mango - WOOD FUR COAT </h1>
-                    <p className="salle"><span>3599</span> 1999 ₴</p>
-                    <p className="description">Однотонная укороченая шестяная шуба,<br />
-                                        отличный выбор на зиму. Стильный цвет станет<br />
-                                            хорошим другом вашему стилю одежды</p>
+                    <h1>{name}</h1>
+                    <p className="salle"><span>{sale > 0 ? sale : ''}</span> {price}₴</p>
+                    <p className="description">{type}</p>
                     <div className="size">
                         <h2>РАЗМЕР</h2>
                         <ul className="items-size">

@@ -11,20 +11,20 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import store from './redux/store'
-
+import ScrollToTop from './components/ScrollToTop'
 import './index.sass';
 
 
 import App from './App';
-
-console.log(store.getState())
 
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Provider store={store}>
-        <App />
+        <ScrollToTop>
+          <App />
+        </ScrollToTop>
       </Provider>
     </Router>,
   </React.StrictMode>,

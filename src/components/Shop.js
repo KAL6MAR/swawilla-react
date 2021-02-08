@@ -7,15 +7,15 @@ import { useSelector } from 'react-redux'
 
 function Shop() {
     const { items } = useSelector(({ stuff }) => {
-    return {
-      items: stuff.items,
-    };
-  });
+        return {
+            items: stuff.items,
+        };
+    });
 
 
-    const renderItems = items.map(obj =><Item key={obj.id} {...obj} />)
+    const renderItems = items.map(obj => <Item key={obj.id} {...obj} />)
 
-  console.log(items)
+    console.log(items)
     return (
         <div>
             <Collection />

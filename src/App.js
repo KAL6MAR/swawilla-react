@@ -2,25 +2,21 @@ import { useEffect } from 'react';
 
 import { Section1, Section2, Section3, Section4, Shop, ItemsPage, Footer, Nav } from './components'
 import { Route } from 'react-router-dom';
-import axios from 'axios'
-import { setStuff as setStuffAction } from './redux/actions/stuff'
+import { fetchStuff } from './redux/actions/stuff'
 
-
-import { useDispatch } from 'react-redux'
-
+import { useDispatch, useSelector } from 'react-redux'
 
 import './App.sass';
 
 function App() {
 
   const dispatch = useDispatch();
+  const { category } = useSelector(({ filter }) => filter);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/bd.json').then(({ data }) => {
-      dispatch(setStuffAction(data.items));
-    })
-    // eslint-disable-next-line
-  }, [])
+    dispatch(fetchStuff(category));
+    console.log("обновились")
+  }, [category])
 
   return (
     <div className="my-page">
@@ -45,18 +41,3 @@ function App() {
 
 export default App;
 
-// const mapStateToProps = (state) => {
-//   return {
-//     items: state.stuff.items,
-//     filters: state.filters
-//   }
-// };
-
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     setStuff: (stuff) => dispatch(setStuffAction(stuff))
-//   }
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(App);

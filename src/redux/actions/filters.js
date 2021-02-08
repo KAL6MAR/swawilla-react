@@ -5,7 +5,7 @@ export const setSortBy = (name) => ({
 
 
 
-export const setCategory = (catIndex) => ({
+export const setCategory = (catName) => ({
     type: 'SET_CATEGORY',
-    payload: catIndex,
+    payload: catName,
 })

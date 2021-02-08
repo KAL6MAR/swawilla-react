@@ -13,7 +13,7 @@ function MainCarousel() {
         <div id="carousel-3" className="carousel slide" data-ride="carousel">
             <div className="container carousel-inner no-padding">
                 <div className="carousel-item active">
-
+                    <h1>HUI</h1>
                 </div >
                 {
                     items && items.map(obj => <CarouselItem key={obj.id} {...obj} />)

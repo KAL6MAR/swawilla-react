@@ -45,23 +45,26 @@ $gutter: $grid-gutter-width
         font-weight: $fweight
         src: url($furl) format('woff2')
 
-@include font('roboto-oh5', normal, 400, '/fonts/roboto-regular-webfont.woff2')
-@include font('roboto-oh5', italic, 400, '/fonts/roboto-italic-webfont.woff2')
-@include font('roboto-oh5', normal, 700, '/fonts/roboto-bold-webfont.woff2')
-@include font('roboto-oh5', italic, 700, '/fonts/roboto-bolditalic-webfont.woff2')
-@include font('Montserrat', normal, 300, '/fonts/montserrat-300.woff2')
-@include font('Montserrat', italic, 300, '/fonts/montserrat-300italic.woff2')
-@include font('Montserrat', normal, 400, '/fonts/montserrat-regular.woff2')
-@include font('Montserrat', italic, 400, '/fonts/montserrat-regularitalic.woff2')
-@include font('Montserrat', normal, 700, '/fonts/montserrat-700.woff2')
-@include font('Futura', normal, 300, '/fonts/FuturaLightC.woff')
-@include font('Futura', italic, 300, '/fonts/FuturaLightC-Italic.woff')
-@include font('Futura', normal, 400, '/fonts/FuturaBookC.woff')
-@include font('Futura', italic, 400, '/fonts/FuturaBookC-Italic.woff')
-@include font('Futura', normal, 500, '/fonts/FuturaMediumC.woff')
-@include font('Futura', italic, 500, '/fonts/FuturaMediumC-Italic.woff')
+@include font('roboto-oh5', normal, 400, '/assets/fonts/roboto-regular-webfont.woff2')
+@include font('roboto-oh5', italic, 400, '/assets/fonts/roboto-italic-webfont.woff2')
+@include font('roboto-oh5', normal, 700, '/assets/fonts/roboto-bold-webfont.woff2')
+@include font('roboto-oh5', italic, 700, '/assets/fonts/roboto-bolditalic-webfont.woff2')
+@include font('Montserrat', normal, 300, '/assets/fonts/montserrat-300.woff2')
+@include font('Montserrat', italic, 300, '/assets/fonts/montserrat-300italic.woff2')
+@include font('Montserrat', normal, 400, '/assets/fonts/montserrat-regular.woff2')
+@include font('Montserrat', italic, 400, '/assets/fonts/montserrat-regularitalic.woff2')
+@include font('Montserrat', normal, 700, '/assets/fonts/montserrat-700.woff2')
+@include font('Futura', normal, 300, '/assets/fonts/FuturaLightC.woff')
+@include font('Futura', italic, 300, '/assets/fonts/FuturaLightC-Italic.woff')
+@include font('Futura', normal, 400, '/assets/fonts/FuturaBookC.woff')
+@include font('Futura', italic, 400, '/assets/fonts/FuturaBookC-Italic.woff')
+@include font('Futura', normal, 500, '/assets/fonts/FuturaMediumC.woff')
+@include font('Futura', italic, 500, '/assets/fonts/FuturaMediumC-Italic.woff')
 
 // GENERAL DOCUMENT STYLES
+
+html
+    width: 100vw
 
 ::placeholder
     color: #666
@@ -115,12 +118,13 @@ body
     font-weight: 500
     font-size: 24px
     line-height: 28px
-    color: #F7B10B
+    color: #c28a00
     span
         font-family: $ft
         font-style: normal
         font-weight: 500
-        font-size: 24px
+        font-size: 1.25rem
+        margin-left: 5px
         line-height: 28px
         text-decoration-line: line-through
         color: #000000!important
@@ -185,3 +189,8 @@ body
     &:hover
         text-decoration: none
         color: #000
+
+.loading
+    min-height: 400px!important
+    h1 
+        text-align: center

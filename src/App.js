@@ -1,60 +1,31 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-import { Section1, Section2, Section3, Section4, Shop, ItemsPage, Footer, Nav } from './components'
-import { Route } from 'react-router-dom';
-import axios from 'axios'
-import { setStuff as setStuffAction } from './redux/actions/stuff'
+import { Footer, Nav } from "./components";
+import { Route } from "react-router-dom";
+import { fetchStuff } from "./redux/actions/stuff";
+import { Home, Shop, ItemsPage } from "./pages";
+import { useDispatch, useSelector } from "react-redux";
 
-import { connect } from 'react-redux'
+import "./App.sass";
 
+function App() {
+    const dispatch = useDispatch();
+    const { category } = useSelector(({ filter }) => filter);
 
-import './App.sass';
+    useEffect(() => {
+        dispatch(fetchStuff(category));
+        console.log("обновились");
+    }, [category, dispatch]);
 
-
-function App(props) {
-  console.log(props.items)
-
-
-  useEffect(() => {
-    axios.get('http://localhost:3000/bd.json').then(({ data }) => {
-      props.setStuff(data.items)
-    })
-  }, [])
-
-  return (
-    <div className="my-page">
-      <Nav />
-      <Route exact path="/">
-        <Section1 />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-      </Route>
-
-      <Route path="/item/:id">
-        <ItemsPage />
-      </Route>
-
-      <Route exact path="/shop">
-        <Shop items={props.items} />
-      </Route>
-
-      <Footer />
-    </div >
-  );
+    return (
+        <div className='my-page'>
+            <Nav />
+            <Route exact path='/' component={Home} />
+            <Route path='/shop/item/:id' component={ItemsPage} />
+            <Route exact path='/shop' component={Shop} />
+            <Footer />
+        </div>
+    );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    items: state.stuff.items
-  }
-};
-
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setStuff: (stuff) => dispatch(setStuffAction(stuff))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

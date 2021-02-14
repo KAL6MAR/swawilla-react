@@ -22,7 +22,6 @@
         font-size: 0.75rem
         line-height: $lineheight
         letter-spacing: $spacing
-
     span
         position: relative
         content: ''
@@ -41,13 +40,20 @@
         transform: scale(0.7)
     @media ( max-width: 480px )
         display: none
-
-#carouselExampleIndicators
-    width: 25rem
-    height: 25rem
-    float: right
-    margin-right: 0
-    .carousel-inner
+.HeroCarouselItem
+    position: relative
+    img
+        margin-right: auto
+        margin-left: auto
+        max-width: 400px
+        height: auto
+    .caption
+        margin-left: auto
+        margin-right: auto
+        position: absolute
+        top: 50%
+        right: 50px
+        transform: translate(0, -0%)
         h5
             font-family: $ft
             font-style: normal
@@ -73,42 +79,20 @@
             color: #FFFFFF
             background: #000000
             border-radius: 50px
-            width: 7.18rem
+            width: 9rem
             height: 2rem
             float: right
-    .carousel-control-next
-        opacity: 1
-        &:hover
-            opacity: 0.5
-            transition: opacity .15s ease
-        .carousel-control-next-icon
-            background-color: #ffffff
-            width: 2.5rem
-            height: 2.5rem
-            border-radius: 20px
-            font-family: Futura
-            font-style: normal
-            font-weight: 500
-            font-size: 1.5rem
-            line-height: 2.625rem
-            text-align: center
-            color: #000000
-            opacity: 1
+            &:hover
+                background-color: #fff
+                color: #000
+                transition: background-color .15s ease
+.slick-slide
+    padding: 10px
 
-    .carousel-control-prev
-        opacity: 1
-        &:hover
-            opacity: 0.5
-            transition: opacity .15s ease
-        .carousel-control-prev-icon
-            background-color: #ffffff
-            width: 2.5rem
-            height: 2.5rem
-            border-radius: 20px
-            font-family: $ft
-            font-style: normal
-            font-weight: 500
-            font-size: 1.5rem
-            line-height: 2.625rem
-            text-align: center
-            color: #000000
+.slick-prev, .slick-next
+    z-index: 1
+    display: none
+
+.slick-prev:before, .slick-next:before
+    content: '' !important
+    z-index: 1

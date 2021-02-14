@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowDown, Search, ShoppingCart, Camera } from '../img'
+import { Link } from 'react-router-dom';
+import { ArrowDown, Search, ShoppingCart, Camera } from '../assets/index'
 
 
 function Nav() {
@@ -34,11 +35,11 @@ function Nav() {
 
                 </div>
                 <div className="col logo z1000">
-                    SWAWILLA
+                   <Link to="/">SWAWILLA</Link> 
                 </div>
                 <div className="col z1000">
                     <div ref={accountRef} className="cart-account">
-                        <p id="account-btn" className={visiblePopup === true ? 'active' : ''} onClick={toggleVisiblePopup}><img className={visiblePopup === false ? 'rotated' : ''} src={ArrowDown} alt="" />АККАУНТ</p>
+                        <p id="account-btn" className={visiblePopup === true ? 'active' : ''} onClick={toggleVisiblePopup}><img className={visiblePopup === false ? 'rotated' : ''} src={ArrowDown} alt="" />ACCOUNT</p>
                         <div className="cart"><img src={ShoppingCart} alt="" className="shopping-bag" /></div>
                         {visiblePopup && <div className="account-poppup">
                             <div className="icon">

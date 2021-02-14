@@ -1,4 +1,7 @@
 import React from 'react';
+
+import {Link} from 'react-router-dom'
+
 function Footer(props) {
     return (
         <footer className="ftco-footer bg-light ftco-section">
@@ -18,9 +21,9 @@ function Footer(props) {
                         <div className="ftco-footer-widget mb-4 ml-md-5">
                             <h2 className="ftco-heading-2">Меню</h2>
                             <ul className="list-unstyled">
-                                <li><a href="/" className="py-2 d-block">Магазин</a></li>
-                                <li><a href="/" className="py-2 d-block">Главная</a></li>
-                                <li><a href="/" className="py-2 d-block">Корзина</a></li>
+                                <li><Link to="/shop" className="py-2 d-block"> Магазин</Link></li>
+                                <li><Link to="/" className="py-2 d-block"> Главная</Link></li>
+                                <li><Link to="/cart" className="py-2 d-block"> Корзина</Link></li>
                                 <li><a href="/" className="py-2 d-block">Связаться с нами</a></li>
                             </ul>
                         </div>
@@ -58,7 +61,7 @@ function Footer(props) {
                     <div className="col-md-12 text-center">
 
                         <p>
-                            Copyright &copy; Все права защищены
+                            Copyright &copy; {new Date().getFullYear()}  Все права защищены
 						  </p>
                     </div>
                 </div>

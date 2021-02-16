@@ -4,6 +4,7 @@ import ShopItem from "./ShopPage/ShopItem";
 import PageLinks from "./ShopPage/PageLinks";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchStuff } from "../redux/actions/stuff";
+import { addItemToCart } from "../redux/actions/cart";
 
 function Shop() {
     const { category } = useSelector(({ filter }) => filter);
@@ -21,14 +22,24 @@ function Shop() {
         };
     });
 
-    const renderItems = items.map((obj) => <ShopItem key={obj.id} {...obj} />);
+    const handleAddItemToCart = (obj) => {
+        dispatch(addItemToCart(obj));
+    };
 
     return (
         <div>
             <Collection />
             <section className='ftco-section bg-light'>
                 <div className='container-fluid'>
-                    <div className='row'>{renderItems}</div>
+                    <div className='row'>
+                        {items.map((obj) => (
+                            <ShopItem
+                                onClickAddItem={handleAddItemToCart}
+                                key={obj.id}
+                                {...obj}
+                            />
+                        ))}
+                    </div>
                     <div className='row mt-5'>
                         <div className='col text-center'>
                             <PageLinks

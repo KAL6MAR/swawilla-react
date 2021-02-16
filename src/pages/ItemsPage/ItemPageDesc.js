@@ -1,9 +1,18 @@
 import React from "react";
-import ItemAmmountButton from "./ItemAmmountButton";
-
+import { useSelector, useDispatch } from "react-redux";
+import { ItemAmmountButton, ItemSize } from "./";
+import { setSize } from "../../redux/actions/size";
 function ItemPageDesc(item) {
-    console.log(item);
-    const { name, type, price, sale } = item.item;
+    const { name, type, price, sale, size } = item.item;
+
+    const { sizeState } = useSelector(({ size }) => size);
+
+    const dispatch = useDispatch();
+
+    const onSelectSize = (size) => {
+        dispatch(setSize(size));
+    };
+
     return (
         <div className='item-desc col-md-3 col-sm-3 align-self-center'>
             <h1>{name}</h1>
@@ -13,14 +22,12 @@ function ItemPageDesc(item) {
             <p className='description'>{type}</p>
             <div className='size'>
                 <h2>РАЗМЕР</h2>
-                <ul className='items-size'>
-                    <li>XS</li>
-                    <li className='active'>S</li>
-                    <li>M</li>
-                    <li>L</li>
-                    <li>XL</li>
-                    <li>XXL</li>
-                </ul>
+                <ItemSize
+                    items={size}
+                    activeSize={sizeState}
+                    onClickSize={onSelectSize}
+                />
+
                 <p>
                     <a href='/'>Как выбрать размер?</a>
                 </p>

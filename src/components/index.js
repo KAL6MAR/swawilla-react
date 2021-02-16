@@ -1,5 +1,5 @@
-import SctollToTop from "./ScrollToTop";
 import Footer from "./Footer";
 import Nav from "./Nav";
+import ScrollToTop from "./ScrollToTop";
 
-export { Nav, Footer, SctollToTop };
+export { Footer, Nav, ScrollToTop };

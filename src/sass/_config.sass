@@ -190,7 +190,74 @@ body
         text-decoration: none
         color: #000
 
+.btn-primary
+    background: $accent
+    &:hover
+        color: #212529
+        background-color:  darken($accent, 2)!important
+        border-color:  darken($accent, 2)!important
+    &:focus
+         background-color: darken($accent, 4)!important
+         color: #212529;
+    /* background-color: #eb98a9; */
+    border-color: $accent;
+    box-shadow: 0 0 0 0.2rem rgb(247, 177, 50 / 50%);
+
 .loading
     min-height: 400px!important
     h1 
         text-align: center
+
+.text
+        position: relative
+        h1
+            font-size: $fontsizeB
+            margin-bottom: 5px
+            font-weight: 300
+        h3
+            font-family: $ft
+            font-size: $fontsize
+            margin-bottom: 5px
+            font-weight: 300
+        a
+            color: $black
+
+            span.price-dc
+                text-decoration: line-through
+                color: lighten($black,70%)
+            span.price-sale
+                color: $black
+
+
+.item-ammount
+        display: inline
+        padding: 5px 5px
+        
+        box-sizing: border-box
+        border-radius: 50px
+        user-select: none
+        p
+            display: inline
+            margin: 0
+            font-family: Futura
+            font-style: normal
+            font-weight: 500
+            font-size: 18px
+            line-height: 21px
+            color: #000000
+        span
+            display: inline
+            margin: 0 15px 0 10px
+            font-family: Futura
+            font-style: normal
+            font-weight: 500
+            font-size: 18px
+            line-height: 21px
+            color: #c4c4c4
+            &:hover
+                cursor: pointer
+
+
+.border-plus-bgc
+    background: #FAFAFA!important
+    border: 1px solid #C4C4C4!important

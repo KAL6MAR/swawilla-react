@@ -1,17 +1,17 @@
 import React from "react";
-import store from "../redux/store";
 import ItemPageCarousel from "./ItemsPage/ItemPageCarousel";
 import ItemPageDesc from "./ItemsPage/ItemPageDesc";
-import { shallowEqual, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-const selectItems = (state) => state.stuff.map((items) => items.id);
-
-function ItemsPage({ match }) {
+function ItemPage({ match }) {
     const { id } = match.params;
-
+    console.log(typeof id);
     const { isLoaded } = useSelector(({ stuff }) => stuff);
-    const getItem = useSelector(selectItems, shallowEqual);
-
+    const getItem = useSelector(({ stuff }) =>
+        //eslint-disable-next-line
+        stuff.items.find((item) => item.id == id)
+    );
+    console.log(getItem);
     if (isLoaded !== false) {
         const { img } = getItem;
 
@@ -34,5 +34,4 @@ function ItemsPage({ match }) {
         );
     }
 }
-
-export default ItemsPage;
+export default ItemPage;

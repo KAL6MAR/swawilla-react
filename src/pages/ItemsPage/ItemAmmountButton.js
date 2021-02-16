@@ -18,13 +18,13 @@ function ItemAmmountButton() {
         setCounter(value);
     };
     const setCounterDecrement = () => {
-        if (value !== 0) {
+        if (value !== 1) {
             dispatch(counterDecrement());
             setCounter(value);
         }
     };
     return (
-        <div className='item-ammount'>
+        <div className='item-ammount border-plus-bgc'>
             <span onClick={setCounterIncrement}>+</span>
             <p>{value}</p>
             <span onClick={setCounterDecrement}>-</span>

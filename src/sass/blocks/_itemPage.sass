@@ -86,6 +86,7 @@
                 text-decoration: none
                 color: #000000
         .items-size
+            user-select: none
             margin: 0
             list-style: none
             padding-left: 0
@@ -97,7 +98,7 @@
                 font-family: Montserrat
                 font-style: normal
                 font-weight: 600
-                margin-right: -5px
+                margin: 0
                 font-size: 16px
                 line-height: 22px
                 color: rgba(0, 0, 0, 0.5)
@@ -105,43 +106,19 @@
                 list-style: none
                 transition: transform .2s ease
                 transform: scale(1)
-                z-index: 0
+                z-index: 1
                 &:hover
                     transition: transform .2s ease
                     transform: scale(1.2)
-
+            .active
+                transition: all .2s ease
+                transform: scale(1.2)
+                background: $accent
+                margin: 0 1vh
 .buttons-place
     min-width: 180px
     min-height: 50px
-    .item-ammount
-        display: inline
-        padding: 5px 5px
-        background: #FAFAFA
-        border: 1px solid #C4C4C4
-        box-sizing: border-box
-        border-radius: 50px
-        user-select: none
-        p
-            display: inline
-            margin: 0
-            font-family: Futura
-            font-style: normal
-            font-weight: 500
-            font-size: 18px
-            line-height: 21px
-            color: #000000
-
-        span
-            display: inline
-            margin: 0 15px 0 10px
-            font-family: Futura
-            font-style: normal
-            font-weight: 500
-            font-size: 18px
-            line-height: 21px
-            color: #c4c4c4
-            &:hover
-                cursor: pointer
+        
     .btn-black
         padding: 5px 26px 5px 26px
         margin-left: 23px

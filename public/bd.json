@@ -41,7 +41,7 @@
             "type": "MAN",
             "price": 9820,
             "sale": 0,
-            "size": ["XS", "XL", "L"]
+            "size": ["XS", "XL", "L", "S"]
         },
         {
             "id": 2,

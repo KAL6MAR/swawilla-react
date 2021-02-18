@@ -6,6 +6,7 @@ import { fetchStuff } from "./redux/actions/stuff";
 import { Home, Shop, ItemPage, Cart } from "./pages";
 import { useDispatch, useSelector } from "react-redux";
 
+import store from "./redux/store";
 import "./App.sass";
 
 function App() {

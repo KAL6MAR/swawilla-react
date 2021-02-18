@@ -1,19 +1,36 @@
 import React from "react";
+
 import ItemPageCarousel from "./ItemsPage/ItemPageCarousel";
 import ItemPageDesc from "./ItemsPage/ItemPageDesc";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import { addItemToCart } from "../redux/actions/cart";
 
 function ItemPage({ match }) {
     const { id } = match.params;
-    console.log(typeof id);
+    const dispatch = useDispatch();
+
     const { isLoaded } = useSelector(({ stuff }) => stuff);
+
     const getItem = useSelector(({ stuff }) =>
         //eslint-disable-next-line
         stuff.items.find((item) => item.id == id)
     );
-    console.log(getItem);
+
+    const getArrivals = useSelector(({ stuff }) =>
+        //eslint-disable-next-line
+        stuff.arrivals.find((item) => item.id == id)
+    );
+
+    const handleAddItemToCart = (obj) => {
+        dispatch(addItemToCart(obj));
+        console.log(obj);
+    };
+
+    const cartItems = useSelector(({ cart }) => cart.items);
+
     if (isLoaded !== false) {
-        const { img } = getItem;
+        const { img } = getItem !== undefined ? getItem : getArrivals;
 
         return (
             <div className='section item-sec'>
@@ -22,7 +39,14 @@ function ItemPage({ match }) {
                         <ItemPageCarousel img={img} />
                     </div>
 
-                    <ItemPageDesc item={getItem} />
+                    <ItemPageDesc
+                        item={getItem !== undefined ? getItem : getArrivals}
+                        addedCount={
+                            cartItems[parseInt(id)] &&
+                            cartItems[parseInt(id)].length
+                        }
+                        onClickAddItem={handleAddItemToCart}
+                    />
                 </div>
             </div>
         );

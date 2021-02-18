@@ -1,20 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
+import store from "../redux/store";
+import CartItem from "./CartPage/CartItem";
+import { saveState } from "../redux/reducers/localStorage";
 
-import { ItemAmmountButton } from "./ItemsPage";
+import {
+    clearCart,
+    removeCartItem,
+    plusCartItem,
+    minusCartItem,
+} from "../redux/actions/cart";
+function Cart() {
+    const dispatch = useDispatch();
 
-function Cart(props) {
-    const { totalPrice, totalCount } = useSelector(({ cart }) => cart);
+    const { totalPrice, totalCount, items } = useSelector(({ cart }) => cart);
 
-    console.log(totalCount, totalPrice);
+    const itemInCart = Object.keys(items).map((key) => {
+        return items[key].items[0];
+    });
+
+    const onRemoveItem = (id) => {
+        if (window.confirm("Вы действительно хотите удалить?")) {
+            dispatch(removeCartItem(id));
+        }
+    };
+
+    const onMinusItem = (id) => {
+        dispatch(minusCartItem(id));
+    };
+
+    const onPlusItem = (id) => {
+        dispatch(plusCartItem(id));
+    };
 
     return (
         <div className='container-fluid'>
-            {" "}
             <div className='card'>
                 <div className='row'>
                     <div className='col-md-8 shopping-cart '>
@@ -31,54 +55,24 @@ function Cart(props) {
                             </div>
                         </div>
 
-                        <div className='row'>
-                            <div className='row items align-items-center'>
-                                <div className='col-2'>
-                                    <img
-                                        className='img-fluid'
-                                        src='https://i.imgur.com/ba3tvGm.jpg'
-                                    />
-                                </div>
-                                <div className='col'>
-                                    <div className='row text'>Shirt</div>
-                                    <div className='row'>Cotton T-shirt</div>
-                                </div>
-                                <div className='col'>
-                                    {" "}
-                                    <ItemAmmountButton />{" "}
-                                </div>
-                                <div className='col'>
-                                    &euro; 44.00{" "}
-                                    <span className='close'>&#10005;</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='row border-top border-bottom'>
-                            <div className='row items align-items-center'>
-                                <div className='col-2'>
-                                    <img
-                                        className='img-fluid'
-                                        src='https://i.imgur.com/pHQ3xT3.jpg'
-                                    />
-                                </div>
-                                <div className='col'>
-                                    <div className='row text-muted'>Shirt</div>
-                                    <div className='row'>Cotton T-shirt</div>
-                                </div>
-                                <div className='col'>
-                                    {" "}
-                                    <a href='#'>-</a>
-                                    <a href='#' className='border'>
-                                        1
-                                    </a>
-                                    <a href='#'>+</a>{" "}
-                                </div>
-                                <div className='col'>
-                                    &euro; 44.00{" "}
-                                    <span className='close'>&#10005;</span>
-                                </div>
-                            </div>
-                        </div>
+                        {itemInCart &&
+                            itemInCart.map((obj) => (
+                                <CartItem
+                                    name={obj.name}
+                                    size={obj.size}
+                                    price={obj.price}
+                                    img={obj.img}
+                                    type={obj.type}
+                                    id={obj.id}
+                                    totalPrice={items[obj.id].totalPrice}
+                                    totalCount={items[obj.id].items.length}
+                                    onRemove={onRemoveItem}
+                                    onMinus={onMinusItem}
+                                    onPlus={onPlusItem}
+                                >
+                                    {console.log(obj.img[0])}
+                                </CartItem>
+                            ))}
                     </div>
                     <div
                         className='col-md-4 summary'
@@ -99,8 +93,11 @@ function Cart(props) {
                         <form>
                             <p>SHIPPING</p>{" "}
                             <select>
-                                <option className='text-muted'>
-                                    Standard-Delivery- &euro;5.00
+                                <option className='text'>
+                                    Nova-Poshta- &#8372; 80.00
+                                </option>
+                                <option className='text'>
+                                    PickUp-At-Nearest-Store- FREE
                                 </option>
                             </select>
                             <p>GIVE CODE</p>{" "}

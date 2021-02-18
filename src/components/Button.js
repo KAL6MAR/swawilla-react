@@ -1,11 +1,23 @@
 import React from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 
-function Button({ text, onClick }) {
+const Button = ({ onClick, className, outline, children, add }) => {
     return (
-        <button className='add-to-cart btn btn-primary' onClick={onClick}>
-            {text}
+        <button
+            onClick={onClick}
+            className={classNames("button", className, {
+                "button--outline": outline,
+                "button--add": add,
+            })}
+        >
+            {children}
         </button>
     );
-}
+};
+
+Button.propTypes = {
+    onClick: PropTypes.func,
+};
 
 export default Button;

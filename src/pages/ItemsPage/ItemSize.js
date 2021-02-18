@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import classNames from "classnames";
 
-function ItemSize({ activeSize, items, onClickSize }) {
-    console.log(activeSize);
+import "../../sass/_config.sass";
+
+function ItemSize({ items, onClickSize }) {
+    const availableSizes = ["XS", "S", "M", "L", "XL", "XXl"];
+    const [activeSize, setActiveSize] = useState();
+
+    const onSelectSize = (index) => {
+        setActiveSize(index);
+    };
+
     return (
         <ul className='items-size'>
-            {items &&
-                items.map((name, index) => (
-                    <li
-                        className={activeSize === name ? "active" : ""}
-                        onClick={() => onClickSize(name)}
-                        key={`${name}_${index}`}
-                    >
-                        {console.log(name)}
-                        {name}
-                    </li>
-                ))}
+            {availableSizes.map((size, index) => (
+                <li
+                    key={size}
+                    onClick={() => {
+                        onSelectSize(index);
+                        onClickSize(size);
+                    }}
+                    className={classNames({
+                        active: activeSize === index,
+                        disabled: !items.includes(size),
+                    })}
+                >
+                    {size}
+                </li>
+            ))}
         </ul>
     );
 }

@@ -67,14 +67,10 @@
 
 #account-btn
     user-select: none
+    margin-right: 10px
     &:hover
         cursor: pointer
-    img
-        margin-right: 5px
-        width: 0.5rem
-        height: 0.5rem
-        &.rotated
-            transform: rotate(180deg)
+    
 .cart-account
     user-select: none
     font-family: Futura
@@ -86,8 +82,9 @@
     float: right
     .active
         border-bottom-style: dotted
-        width: 60px
         border-color: rgba(0, 0, 0, .4)
+    a:hover
+        text-decoration: none
     p
         display: inline
         position: relative
@@ -108,6 +105,12 @@
             left: 7px
         &:hover
             cursor: pointer
+    img
+        margin-right: 5px
+        width: 0.5rem
+        height: 0.5rem
+        &.rotated
+            transform: rotate(180deg)
     .account-poppup
         position: absolute
         display: block
@@ -116,9 +119,14 @@
         background: #FFFFFF
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
         border-radius: 10px
-        margin-top: 10px
-        right: 80px
+        margin: 0
+        top: 50px
+        right: 14vw
         z-index: 100
+        @media screen and ( min-width:  992px )
+            right: 11vw
+        @media screen and ( max-width:  768px )
+            right: 18vw
         .block
             h1
                 font-family: Montserrat
@@ -137,7 +145,6 @@
             top: 10px
             h1
                 position: relative
-                top: -20px
                 margin: 0 0 0 50px
                 font-family: Montserrat
                 font-style: normal
@@ -152,9 +159,9 @@
                 margin: 4px 0 0 4px
 
         .account-poppup-menu
-            text-align: center
             position: relative
-            top: 13px
+            text-align: center
+            top: 2vh
             .block
                 transition: background .15s ease
                 background: #fff
@@ -164,7 +171,6 @@
                 box-sizing: border-box
                 h1
                     display: block
-                    position: relative
                     padding: 3px
                 a:hover
                     text-decoration: none

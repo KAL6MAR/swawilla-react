@@ -129,6 +129,31 @@
     @media(max-width:767px) 
         .card 
             margin: 3vh auto
+    &__item
+        &-count
+            display: flex
+            align-items: center
+            justify-content: space-between
+            width: 13%
+            b
+                font-size: 1.5rem
+            @media (max-width: 768px)
+                order: 4
+                width: 130px
+                margin: 10px 0
+                
+                .button
+                    width: 40px
+                    height: 40px
+                    svg
+                        width: 14px
+                        height: 14px
+                b
+                    font-size: 1.75rem
+            &-minus
+                svg
+                    path:first-of-type
+                        display: none
     .shopping-cart 
     background: $white
     padding: 4vh 5vh

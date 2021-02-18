@@ -7,8 +7,6 @@ import { fetchStuff } from "../redux/actions/stuff";
 import { addItemToCart } from "../redux/actions/cart";
 
 function Shop() {
-    const { category } = useSelector(({ filter }) => filter);
-
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -21,9 +19,12 @@ function Shop() {
             items: stuff.items,
         };
     });
+    const { category } = useSelector(({ filter }) => filter);
+    const cartItems = useSelector(({ cart }) => cart.items);
 
-    const handleAddItemToCart = (obj) => {
-        dispatch(addItemToCart(obj));
+    const handleAddItemToCart = (value) => {
+        dispatch(addItemToCart(value));
+        console.log(value);
     };
 
     return (
@@ -32,13 +33,18 @@ function Shop() {
             <section className='ftco-section bg-light'>
                 <div className='container-fluid'>
                     <div className='row'>
-                        {items.map((obj) => (
-                            <ShopItem
-                                onClickAddItem={handleAddItemToCart}
-                                key={obj.id}
-                                {...obj}
-                            />
-                        ))}
+                        {items &&
+                            items.map((obj) => (
+                                <ShopItem
+                                    addedCount={
+                                        cartItems[obj.id] &&
+                                        cartItems[obj.id].items.length
+                                    }
+                                    onClickAddItem={handleAddItemToCart}
+                                    key={obj.id}
+                                    {...obj}
+                                ></ShopItem>
+                            ))}
                     </div>
                     <div className='row mt-5'>
                         <div className='col text-center'>

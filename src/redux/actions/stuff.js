@@ -1,19 +1,24 @@
 import axios from "axios";
 
+export const setLoaded = (payload) => ({
+    type: "SET_LOADED",
+    payload,
+});
+
 export const fetchStuff = (category) => (dispatch) => {
-    axios.get(`http://localhost:3001/items`).then(({ data }) => {
+    dispatch({
+        type: "SET_LOADED",
+        payload: false,
+    });
+    axios.get(`/items`).then(({ data }) => {
         dispatch(setStuff(data));
     });
     axios
-        .get(
-            `http://localhost:3001/arrivals?${
-                category === "ALL" ? "" : `type=${category}`
-            }`
-        )
+        .get(`/arrivals?${category === "ALL" ? "" : `type=${category}`}`)
         .then(({ data }) => {
             dispatch(setArrivals(data));
         });
-    axios.get(`http://localhost:3001/trending`).then(({ data }) => {
+    axios.get(`/trending`).then(({ data }) => {
         dispatch(setTrending(data));
     });
 };

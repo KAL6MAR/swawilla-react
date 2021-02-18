@@ -4,6 +4,9 @@ import stuff from "./stuff";
 import counter from "./counter";
 import size from "./size";
 import cart from "./cart";
+import { loadState } from "./localStorage";
+
+const persistedState = loadState();
 
 const rootReduser = combineReducers({
     filter,
@@ -11,6 +14,7 @@ const rootReduser = combineReducers({
     counter,
     size,
     cart,
+    persistedState,
 });
 
 export default rootReduser;

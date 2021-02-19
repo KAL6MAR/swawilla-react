@@ -4,7 +4,9 @@ import { ArrowDown, Search, Camera } from "../assets/index";
 import { useSelector } from "react-redux";
 import { Button } from ".";
 
-function Nav() {
+function Nav({ context }) {
+    const ctx = React.useContext(context);
+
     const [visiblePopup, setVisiblePopup] = useState(false);
     const accountRef = useRef(null);
 
@@ -28,12 +30,14 @@ function Nav() {
         <div className='top-lite'>
             <div className='row justify-content-around align-items-center'>
                 <div className='col z1000'>
-                    <div className='l'>
-                        <a href='/' className='menu' id='mmenu-icon'>
-                            <span>
-                                ME <br /> NU
-                            </span>{" "}
-                        </a>{" "}
+                    <div
+                        className='l menu'
+                        id='mmenu-icon bm-icon'
+                        onClick={ctx.toggleMenu}
+                    >
+                        <span>
+                            ME <br /> NU
+                        </span>
                         <img className='search' src={Search} alt='' />
                         <span className='line'></span>
                     </div>

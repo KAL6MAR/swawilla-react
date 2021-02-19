@@ -1,6 +1,6 @@
 const jsonServer = require("json-server");
 const server = jsonServer.create();
-const router = jsonServer.router("./publick/db.json");
+const router = jsonServer.router("./publick/bd.json");
 const middlewares = jsonServer.defaults({
     static: "./build",
 });

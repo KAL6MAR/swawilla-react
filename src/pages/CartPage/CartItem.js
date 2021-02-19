@@ -34,7 +34,7 @@ function CartItem({
                     </div>
                     <div className='col'>
                         <div className='row text'>{name}</div>
-                        <div className='row'>hui</div>
+                        <div className='row'>{name}</div>
                     </div>
                     <div className='col'>
                         <ul className='items-size active'>

@@ -1,10 +1,19 @@
 const localItem = JSON.parse(localStorage.getItem("state"));
-
-const initialState = {
-    items: localItem.items || {},
-    totalPrice: localItem.totalPrice || 0,
-    totalCount: localItem.totalCount || 0,
-};
+console.log(localItem, 111);
+let initialState;
+if (localItem !== null) {
+    initialState = {
+        items: localItem.items,
+        totalCount: localItem.totalCount,
+        totalPrice: localItem.totalPrice,
+    };
+} else {
+    initialState = {
+        items: {},
+        totalCount: 0,
+        totalPrice: 0,
+    };
+}
 
 const getTotalPrice = (arr) => arr.reduce((sum, obj) => obj.price + sum, 0);
 

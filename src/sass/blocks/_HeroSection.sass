@@ -9,7 +9,10 @@
     right: 0
     background: linear-gradient(76.56deg, #EC9E07 0%, #F7B10B 100%)
     background-size: cover
-
+    @media ( max-width: 992px )
+        padding: 0 20px
+    &--carousel
+    
 .left-desc
     color: #000000
     transform: rotate(-90deg)
@@ -31,61 +34,70 @@
         width: 1.75rem
         top: -18px
         left: 112px
+    @media ( max-width: 992px )
+        display: none
 
 .main-girl
     padding-top: 2.8rem
     float: right
     @media ( max-width: 992px )
-        left: 0
-        transform: scale(0.7)
-    @media ( max-width: 480px )
         display: none
-.HeroCarouselItem
-    position: relative
-    img
-        margin-right: auto
-        margin-left: auto
-        max-width: 400px
-        height: auto
-    .caption
-        margin-left: auto
-        margin-right: auto
-        position: absolute
-        top: 50%
-        right: 50px
-        transform: translate(0, -0%)
-        h5
-            font-family: $ft
-            font-style: normal
-            font-weight: 500
-            font-size: 3rem
-            line-height: 3.43rem
-            text-align: right
-            color: #FFFFFF
-        h6
-            font-family: $ft
-            font-style: normal
-            font-weight: 500
-            font-size: $fontsizeB
-            line-height: 1.31rem
-            color: #000000
-            text-align: right
-        .btn
-            font-family: $ft
-            font-style: normal
-            font-weight: 500
-            font-size: $fontsizeB
-            line-height: 21px
-            color: #FFFFFF
-            background: #000000
-            border-radius: 50px
-            width: 9rem
-            height: 2rem
-            float: right
-            &:hover
-                background-color: #fff
-                color: #000
-                transition: background-color .15s ease
+
+
+.heroSectionCarousel
+    @media ( max-width: 992px  )
+        width: 100%
+    .HeroCarouselItem
+        position: relative
+        img
+            margin-right: auto
+            margin-left: auto
+            max-width: 400px
+            height: auto
+        .caption
+            margin-left: auto
+            margin-right: auto
+            position: absolute
+            top: 50%
+            right: 50px
+            transform: translate(0, -0%)
+            @media ( max-width: 992px  )
+               transform: translate(0, -20%)
+            h5
+                font-family: $ft
+                font-style: normal
+                font-weight: 500
+                font-size: 3rem
+                line-height: 3.43rem
+                text-align: right
+                color: #FFFFFF
+                @media ( max-width: 992px  )
+                    font-size: 2rem
+                    line-height: 1.65rem
+            h6
+                font-family: $ft
+                font-style: normal
+                font-weight: 500
+                font-size: $fontsizeB
+                line-height: 1.31rem
+                color: #000000
+                text-align: right
+            .btn
+                font-family: $ft
+                font-style: normal
+                font-weight: 500
+                font-size: $fontsizeB
+                line-height: 21px
+                color: #FFFFFF
+                background: #000000
+                border-radius: 50px
+                width: 9rem
+                height: 2rem
+                float: right
+                &:hover
+                    background-color: #fff
+                    color: #000
+                    transition: background-color .15s ease
 .slick-slide
     padding: 10px
 

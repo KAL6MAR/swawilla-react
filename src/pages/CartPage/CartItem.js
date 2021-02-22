@@ -34,7 +34,7 @@ function CartItem({
                     </div>
                     <div className='col'>
                         <div className='row text'>{name}</div>
-                        <div className='row'>{name}</div>
+                        <div className='row'></div>
                     </div>
                     <div className='col'>
                         <ul className='items-size active'>
@@ -64,7 +64,7 @@ function CartItem({
                                     />
                                 </svg>
                             </div>
-                            <b>{totalCount}</b>
+                            <b> {totalCount} </b>
                             <div
                                 onClick={handlePlusItem}
                                 className='button button--outline button--circle card__item-count-plus'
@@ -89,7 +89,7 @@ function CartItem({
                         </div>
                     </div>
                     <div className='col'>
-                        &euro; {totalPrice}{" "}
+                        &euro; {totalPrice}
                         <span className='close' onClick={handleRemoveClick}>
                             &#10005;
                         </span>

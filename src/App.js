@@ -40,8 +40,9 @@ function App() {
         <MyProvider>
             <div id='hui'>
                 <AnimatedMenu context={MyContext} />
-                <Nav context={MyContext} />
+
                 <main id='big-hui'>
+                    <Nav context={MyContext} />
                     <Route exact path='/' component={Home} />
                     <Route path='/shop/item/:id' component={ItemPage} />
                     <Route exact path='/shop' component={Shop} />

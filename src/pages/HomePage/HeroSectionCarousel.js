@@ -66,6 +66,7 @@ export default function SimpleSlider() {
         centerPadding: "40px",
         prevArrow: <SampleNextArrow />,
         nextArrow: <SamplePrevArrow />,
+        className: "heroSectionCarousel",
     };
     return (
         <Slider {...settings}>

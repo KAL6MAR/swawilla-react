@@ -4,8 +4,7 @@
     z-index: 10000000
 .top-lite
     margin-bottom: -58px
-.row
-    padding-top: 20px
+    
 .menu
     user-select: none
     font-family: Montserrat
@@ -17,10 +16,13 @@
     color: #000
     padding-left: 40px
     display: inline-block
-    &:hover
-        text-decoration: none
-        color: rgba(0, 0, 0, .7)
-        transition: color .2 ease
+    span
+        &:hover
+            text-decoration: none
+            color: rgba(0, 0, 0, .7)
+            transition: color .2 ease
+            cursor: pointer
+            
     .active
         color: rgba(0, 0, 0, .7)
 .line
@@ -70,7 +72,8 @@
     margin-right: 10px
     &:hover
         cursor: pointer
-    
+    @media ( max-width: 992px )
+        display: none!important
 .cart-account
     user-select: none
     font-family: Futura

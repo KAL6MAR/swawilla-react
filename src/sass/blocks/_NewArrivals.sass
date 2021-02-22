@@ -1,6 +1,7 @@
 @import '../_config'
 
 .sec-4
+    padding: 0 25px
     padding-bottom: 2rem
     background: #fff
     text-align: center
@@ -64,7 +65,6 @@
         margin-top: 40px
         padding: 4px
         margin-bottom: 70px
-
         .active
             color: #000
         li
@@ -73,12 +73,17 @@
             font-family: Montserrat
             font-style: normal
             font-weight: 600
-            font-size: 18px
+            font-size: 1.25rem
             line-height: 22px
             color: rgba(0, 0, 0, 0.5)
             &:hover
                 text-decoration: none
                 cursor: pointer
+            &:last-child
+                margin: 0
+            @media ( max-width: 480px  )
+                font-size: 1rem
+                margin-right: 15px
     #carousel-3
         h3
             margin-top: 5px

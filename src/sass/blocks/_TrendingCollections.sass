@@ -9,6 +9,13 @@
     background: linear-gradient(76.56deg, #E8A3A9 0%, #EAA3AD 100%)
     background-size: cover
     text-align: center
+    @media ( max-width: 480px )
+        padding: 0 20px
+        h4
+            font-size: 0.75rem
+        .trending--desc
+            display: none
+        
     h1
         font-family: $userfont
         font-style: normal
@@ -27,6 +34,7 @@
         text-align: center
         letter-spacing: 0.1em
         color: #000000
+       
     h2
         position: absolute
         font-family: $userfont
@@ -50,3 +58,5 @@
         max-width: 320px!important
         height: auto
         float: right
+     
+            

@@ -24,6 +24,9 @@
 
 /* General sidebar styles */
 .bm-menu 
+  height: 110%
+  position: relative
+  top: -20px
   background: #373a47
   padding: 2.5em 1.5em 0
   font-size: 1.15em
@@ -42,4 +45,19 @@
 
 /* Styling of overlay */
 .bm-overlay 
+  top: -10px
+  height: 110%
   background: rgba(0, 0, 0, 0.3)
+
+.bm-item
+  color: $white
+  animation: itemHoverAnimationReverse 1s ease
+  animation-fill-mode: forwards
+  margin-left: 0
+  transition: margin-left .5s ease
+  &:hover
+    color: $accent
+    animation: itemHoverAnimation 1s ease
+    animation-fill-mode: forwards
+    margin-left: 30px
+    transition: margin-left .5s ease

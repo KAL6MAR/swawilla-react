@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ItemAmmountButton, ItemSize } from "./";
+import { ItemSize } from "./";
 
 import { Button } from "../../components/";
 
@@ -42,8 +42,6 @@ function ItemPageDesc({ item, addedCount, onClickAddItem }) {
                 </p>
             </div>
             <div className='buttons-place'>
-                <ItemAmmountButton />
-
                 <Button key='1' onClick={onAddItem} add outline>
                     <svg
                         width='12'

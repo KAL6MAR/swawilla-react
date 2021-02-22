@@ -43,7 +43,7 @@ function ItemPage({ match }) {
                         item={getItem !== undefined ? getItem : getArrivals}
                         addedCount={
                             cartItems[parseInt(id)] &&
-                            cartItems[parseInt(id)].length
+                            cartItems[parseInt(id)].items.length
                         }
                         onClickAddItem={handleAddItemToCart}
                     />

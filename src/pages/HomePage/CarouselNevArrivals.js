@@ -68,6 +68,24 @@ export default function SimpleSlider() {
         centerPadding: "40px",
         prevArrow: <SampleNextArrow />,
         nextArrow: <SamplePrevArrow />,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                },
+            },
+        ],
     };
     return (
         <Slider {...settings}>

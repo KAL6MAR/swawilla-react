@@ -74,6 +74,7 @@ $gutter: $grid-gutter-width
 
 html
     width: 100vw
+    overflow-x: hidden
 
 ::placeholder
     color: #666
@@ -89,6 +90,9 @@ input, textarea
     &:required:valid
         border-color: green
 
+.main
+   
+
 body
     font-family: $userfont
     font-size: $fontsize
@@ -97,6 +101,9 @@ body
     min-width: 320px
     position: relative
     overflow-x: hidden
+
+#hui
+    padding-top: 20px
 
 .btn-black
     border-radius: 20px
@@ -238,33 +245,6 @@ body
                 color: $black
 
 
-.item-ammount
-        display: inline
-        padding: 5px 5px
-        
-        box-sizing: border-box
-        border-radius: 50px
-        user-select: none
-        p
-            display: inline
-            margin: 0
-            font-family: Futura
-            font-style: normal
-            font-weight: 500
-            font-size: 18px
-            line-height: 21px
-            color: #000000
-        span
-            display: inline
-            margin: 0 15px 0 10px
-            font-family: Futura
-            font-style: normal
-            font-weight: 500
-            font-size: 18px
-            line-height: 21px
-            color: #c4c4c4
-            &:hover
-                cursor: pointer
 
 
 .border-plus-bgc
@@ -296,6 +276,8 @@ body
         &:hover
             transition: transform .2s ease
             transform: scale(1.2)
+        @media ( max-width:  480px)
+            transform: scale(.8)
     .active
         transition: all .2s ease
         transform: scale(1.2)
